@@ -7,6 +7,7 @@ class TadpolesController < ApplicationController
     @frog = Frog.new(:name => @tadpole.name, :color => @tadpole.color, :pond => @tadpole.pond )
     if @frog.save
       @tadpole.destroy
+      redirect_to frog_path(@frog)
     else
       render :show
     end
