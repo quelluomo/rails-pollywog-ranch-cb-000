@@ -9,14 +9,7 @@ class TadpolesController < ApplicationController
     end
   end
 
-  it "makes a new frog with the tadpole's name, color, and pond" do
-    post "/tadpoles/#{@tadpole.id}/metamorphose"
-    found_by_name = Frog.find_by(:name => @tadpole.name)
-    found_by_color = Frog.find_by(:color => @tadpole.color)
-    expect(found_by_color.name).to eq(@tadpole.name)
-    expect(found_by_name.color).to eq(@tadpole.color)
-    expect(found_by_name.pond).to eq(@tadpole.pond)
-    expect(found_by_name).to eq(found_by_color)
+  
 
   def index
     @tadpoles = Tadpole.all
