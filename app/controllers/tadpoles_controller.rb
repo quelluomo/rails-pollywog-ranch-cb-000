@@ -4,7 +4,8 @@ class TadpolesController < ApplicationController
   # add your metamorphose action here
   def metamorphose
     @tadpole = Tadpole.find_by(params[:id])
-    @frog = Frog.build(:name => @tadpole.name, :color => @tadpole.color )
+    @frog = Frog.new(:name => @tadpole.name, :color => @tadpole.color, :pond => @tadpole.pond )
+    @frog.save
   end
 
   it "makes a new frog with the tadpole's name, color, and pond" do
