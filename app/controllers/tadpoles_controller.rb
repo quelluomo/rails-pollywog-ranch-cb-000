@@ -5,7 +5,10 @@ class TadpolesController < ApplicationController
   def metamorphose
     @tadpole = Tadpole.find_by(params[:id])
     @frog = Frog.new(:name => @tadpole.name, :color => @tadpole.color, :pond => @tadpole.pond )
-    @frog.save
+    if @frog.save
+      @tadpole.destroy
+    else
+      render :show
   end
 
 
