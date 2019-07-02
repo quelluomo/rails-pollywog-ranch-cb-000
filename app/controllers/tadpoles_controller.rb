@@ -9,6 +9,7 @@ class TadpolesController < ApplicationController
       @tadpole.destroy
     else
       render :show
+    end
   end
 
 
