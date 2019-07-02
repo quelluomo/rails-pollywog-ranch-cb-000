@@ -6,6 +6,7 @@ class TadpolesController < ApplicationController
     @tadpole = Tadpole.find_by(params[:id])
     @frog = Frog.new(:name => @tadpole.name, :color => @tadpole.color, :pond => @tadpole.pond )
     @frog.save
+    end
   end
 
   it "makes a new frog with the tadpole's name, color, and pond" do
